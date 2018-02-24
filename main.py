@@ -35,7 +35,7 @@ def downloadFile(url, file_name):
     r = requests.get(url, stream=True)
     with open(file_name, 'wb') as file:
         
-        #download for video file is slow maybe because the chunks are too small?
+        #download for is slow maybe because the chunks are too small?
         for chunk in r.iter_content(1024):
             if chunk:
                 file.write(chunk)
@@ -86,11 +86,11 @@ def checkIntegrity(head_info, url, byte_size, file_name):
 def main():
     """
     Main program - performs initial check for the "Accept-Ranges" header and formats
-    user-friendly output.
+    user-friendly output in order to download the file.
     """
     
     #provide source URL
-    url = "https://storage.googleapis.com/vimeo-test/work-at-vimeo-2.mp4"
+    url = "https://static.pexels.com/photos/414171/pexels-photo-414171.jpeg"
     
     #open connection, get headers, close connection
     response = req.urlopen(HeadRequest(url))
